@@ -546,17 +546,16 @@ footer p {
 @media (min-width: 992px) {
     /* On larger screens, keep the WAR.AI blocks side‑by‑side and
        allocate more space to the text column so headings don't wrap
-       unnecessarily. Giving the image 45% of the row and the text 55%
+       unnecessarily. Giving the image 40% ofrow and the text 60%55%
        helps long headings fit comfortably. */
     .warai-block {
         flex-wrap: nowrap;
-    }
+    
     .warai-block img {
-        flex: 0 0 45%;
+        flex0 : 0 0 40%;;
     }
-    .warai-block .text {
-        flex: 0 0 55%;
-    }
+   .warai-block .text {
+            flex: 0 0 60%;
 }
 
 /* Responsive design */
