@@ -1,0 +1,386 @@
+/*
+ * Global styles for the StrikePicks landing page.
+ * The design adopts a modern dark SaaS aesthetic with red accents.
+ */
+
+:root {
+    --color-bg: #0d0d0d;
+    --color-accent: #ff3c3c;
+    --color-white: #ffffff;
+    --color-gray: #1c1c1c;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 12px 26px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #ff6161;
+}
+
+/* Disabled buttons */
+.btn:disabled,
+.btn.disabled {
+    background-color: #7a1c1c;
+    cursor: default;
+    opacity: 0.6;
+}
+
+/* Header */
+header {
+    background-color: var(--color-bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-gray);
+    z-index: 1000;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 0.5px;
+}
+
+.header-btn {
+    font-size: 0.9rem;
+}
+
+/* Hero section */
+.hero {
+    height: 100vh;
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+}
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark gradient overlay to improve legibility */
+    background: linear-gradient(to bottom, rgba(13, 13, 13, 0.4), rgba(13, 13, 13, 0.95));
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+.hero-content h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2rem;
+}
+.cta-btn {
+    font-size: 1.1rem;
+}
+
+/* Funnel section */
+.funnel {
+    padding: 100px 0;
+    margin-top: 80px; /* space for fixed header */
+    background-color: var(--color-bg);
+}
+.funnel h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.step {
+    background-color: var(--color-gray);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 260px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.step .icon {
+    font-size: 2.4rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+.step h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.step p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+.step .deposit-btn {
+    margin-top: auto;
+}
+
+/* Private predictions section */
+.private {
+    padding: 80px 0;
+    background-color: var(--color-gray);
+}
+.private h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.private p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+.predictions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.prediction {
+    background-color: var(--color-bg);
+    padding: 20px;
+    border-radius: 6px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 320px;
+}
+.prediction h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+.prediction p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 100px 0;
+    background-color: var(--color-gray);
+}
+.testimonials h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+.testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.testimonial {
+    background-color: var(--color-bg);
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+.testimonial span {
+    align-self: flex-end;
+    font-weight: 600;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+}
+
+/* FAQ section */
+.faq {
+    padding: 100px 0;
+    background-color: var(--color-bg);
+}
+.faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+.faq-item {
+    border-bottom: 1px solid var(--color-gray);
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    text-align: left;
+    padding: 15px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.faq-question i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+.faq-answer p {
+    padding-bottom: 1rem;
+}
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* Footer */
+footer {
+    padding: 50px 0;
+    background-color: var(--color-gray);
+    color: var(--color-white);
+    font-size: 0.9rem;
+    text-align: center;
+}
+footer p {
+    line-height: 1.4;
+}
+.footer-links {
+    margin-top: 1rem;
+}
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 10px;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Utilities */
+.hidden {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .steps {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row;
+    }
+    .hero {
+        padding: 0 10px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .steps {
+        flex-direction: column;
+    }
+    .step {
+        margin-bottom: 20px;
+    }
+    .predictions {
+        flex-direction: column;
+    }
+    .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .testimonial {
+        max-width: 100%;
+    }
+}
