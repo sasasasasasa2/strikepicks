@@ -97,7 +97,7 @@ header .container {
 /* Hero section */
 .hero {
     height: 100vh;
-    background-i url('hero.jpg');
+    background-image: url('hero.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
