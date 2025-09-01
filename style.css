@@ -85,7 +85,8 @@ header .container {
 }
 /* Logo image sizing */
 .logo img {
-  height: 60px;
+    /* Increase logo size for better visibility on desktop */
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -97,6 +98,7 @@ header .container {
 /* Hero section */
 .hero {
     height: 100vh;
+    /* Reference hero image from project root to avoid broken paths on deployment */
     background-image: url('hero.jpg');
     background-size: cover;
     background-position: center;
@@ -369,15 +371,17 @@ footer p {
     justify-content: space-between;
     gap: 40px;
     margin-bottom: 60px;
+    /* Allow wrapping on smaller screens but keep side-by-side layout on large screens */
     flex-wrap: wrap;
 }
 .warai-block img {
-    width: 45%;
+    /* Use flex-basis instead of fixed percentage widths; the parent gap will be accounted for */
+    flex: 1 1 45%;
     border-radius: 8px;
     height: auto;
 }
 .warai-block .text {
-    width: 55%;
+    flex: 1 1 50%;
 }
 .warai-block .text h3 {
     font-size: 1.6rem;
@@ -531,6 +535,17 @@ footer p {
     }
     .prediction-card {
         max-width: 100%;
+    }
+}
+
+/* Ensure WAR.AI blocks stay side-by-side on large screens */
+@media (min-width: 992px) {
+    .warai-block {
+        flex-wrap: nowrap;
+    }
+    .warai-block img,
+    .warai-block .text {
+        flex: 1 1 50%;
     }
 }
 
