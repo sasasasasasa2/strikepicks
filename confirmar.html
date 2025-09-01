@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar depósito – StrikePicks</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p8f7Aq3GSRbD9DLkoC9pU4cyJ7W4kdVw4VwFS0MaDZa5rm5bgJEvt/tF0gaIG84YV1DKjJQ7At+k9aO77ne6lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-crosshairs"></i>
+                <span>StrikePicks</span>
+            </div>
+            <a href="index.html" class="btn header-btn">Volver al inicio</a>
+        </div>
+    </header>
+
+    <!-- Confirmation Form Section -->
+    <main class="confirm-section">
+        <div class="container">
+            <h2>Confirma tu depósito</h2>
+            <form id="confirm-form">
+                <label for="email">Correo electrónico con el que te registraste en la casa de apuestas</label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="confirm-deposit" required>
+                    Confirmo que he depositado mínimo 10&nbsp;€
+                </label>
+                <button type="submit" class="btn">Verificar y acceder</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>StrikePicks no es una casa de apuestas. Solo ofrecemos predicciones deportivas. Juega con responsabilidad. No se promueve el juego a menores de 18 años.</p>
+            <div class="footer-links">
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Simple client-side form handling
+    document.getElementById('confirm-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Ideally, here we'd verify the deposit with backend logic.
+        // For this demo, if the form is complete we redirect to the private predictions page.
+        const email = document.getElementById('email').value.trim();
+        const depositChecked = document.getElementById('confirm-deposit').checked;
+        if (email !== '' && depositChecked) {
+            // Optionally persist deposit state
+            localStorage.setItem('depositDone', 'true');
+            window.location.href = 'predicciones.html';
+        }
+    });
+    </script>
+</body>
+</html>

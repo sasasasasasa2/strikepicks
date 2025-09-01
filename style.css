@@ -78,11 +78,16 @@ header .container {
     align-items: center;
     padding: 15px 20px;
 }
+/* Logo wrapper: aligns the logo image nicely in the header */
 .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--color-white);
-    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+/* Logo image sizing */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .header-btn {
@@ -92,7 +97,7 @@ header .container {
 /* Hero section */
 .hero {
     height: 100vh;
-    background-image: url('hero.jpg');
+    background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -153,7 +158,7 @@ header .container {
 }
 .step {
     background-color: var(--color-gray);
-    padding: 30px;
+    padding: 40px 30px;
     border-radius: 8px;
     flex: 1;
     min-width: 260px;
@@ -161,9 +166,15 @@ header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid rgba(255, 60, 60, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 60, 60, 0.2);
 }
 .step .icon {
-    font-size: 2.4rem;
+    font-size: 3.2rem;
     color: var(--color-accent);
     margin-bottom: 1rem;
 }
@@ -339,6 +350,188 @@ footer p {
 /* Utilities */
 .hidden {
     display: none;
+}
+
+/* WAR.AI info section */
+.warai {
+    padding: 100px 0;
+    background-color: var(--color-gray);
+}
+.warai .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+.warai-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+.warai-block img {
+    width: 45%;
+    border-radius: 8px;
+    height: auto;
+}
+.warai-block .text {
+    width: 55%;
+}
+.warai-block .text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.warai-block .text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+.warai-block.alternate {
+    flex-direction: row-reverse;
+}
+
+/* Stats section */
+.stats {
+    padding: 80px 0;
+    background-color: var(--color-bg);
+}
+.stats .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    text-align: center;
+}
+.stat {
+    background-color: var(--color-gray);
+    padding: 40px 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 260px;
+}
+.stat .number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+.stat .label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Confirmation page */
+.confirm-section {
+    padding: 120px 0;
+    background-color: var(--color-gray);
+    min-height: 80vh;
+}
+.confirm-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+.confirm-section form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.confirm-section input[type="email"] {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--color-accent);
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    font-size: 1rem;
+}
+.confirm-section input[type="checkbox"] {
+    margin-right: 8px;
+}
+.confirm-section label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+/* Private predictions page */
+.predictions-page {
+    padding: 120px 0;
+    background-color: var(--color-gray);
+    min-height: 80vh;
+}
+.predictions-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+.prediction-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.prediction-card {
+    background-color: var(--color-bg);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 320px;
+}
+.prediction-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+.prediction-card .match {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+.prediction-card .probabilities {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .warai-block {
+        flex-direction: column;
+    }
+    .warai-block img,
+    .warai-block .text {
+        width: 100%;
+    }
+    .stats .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .stat {
+        max-width: 100%;
+    }
+    .confirm-section form {
+        padding: 0 20px;
+    }
+    .prediction-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .prediction-card {
+        max-width: 100%;
+    }
 }
 
 /* Responsive design */

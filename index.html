@@ -17,8 +17,13 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">StrikePicks</div>
-            <a href="#funnel" class="btn header-btn">Desbloquear acceso</a>
+            <div class="logo">
+                <!-- Use a crosshairs icon to evoke the idea of a sniper scope next to the brand name -->
+                <i class="fa-solid fa-crosshairs"></i>
+                <span>StrikePicks</span>
+            </div>
+            <!-- Header CTA now points to the confirmation page -->
+            <a href="confirmar.html" class="btn header-btn">Desbloquear acceso</a>
         </div>
     </header>
 
@@ -28,7 +33,8 @@
         <div class="hero-content">
             <h1>Predicciones de MMA impulsadas por IA</h1>
             <p>WAR.AI analiza miles de patrones para darte las apuestas con mayor tasa de éxito.</p>
-            <a href="https://enlace-afiliado.com" target="_blank" class="btn cta-btn">Accede ahora gratis</a>
+            <!-- Main call to action now directs to the confirmation page for account verification -->
+            <a href="confirmar.html" class="btn cta-btn">Accede ahora</a>
         </div>
     </section>
 
@@ -48,14 +54,64 @@
                     <div class="icon"><i class="fa-solid fa-credit-card"></i></div>
                     <h3>Paso&nbsp;2</h3>
                     <p>Haz tu primer depósito (mínimo 10&nbsp;€).</p>
+                    <!-- deposit confirmation button kept for demonstration but no longer used for gating access -->
                     <button class="btn deposit-btn">Confirmar depósito</button>
                 </div>
                 <!-- Step 3 -->
                 <div class="step">
                     <div class="icon"><i class="fa-solid fa-lock-open"></i></div>
                     <h3>Paso&nbsp;3</h3>
-                    <p>Accede a las predicciones de WAR.AI.</p>
+                    <p>Desbloquea el acceso a nuestras predicciones.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAR.AI Information Section -->
+    <section class="warai">
+        <div class="container">
+            <h2 class="section-title">¿Cómo funciona WAR.AI?</h2>
+            <!-- Block 1: Fighting style analysis -->
+            <div class="warai-block">
+                <img src="images/war1.png" alt="Análisis de estilo de pelea">
+                <div class="text">
+                    <h3>Análisis de estilo de pelea</h3>
+                    <p>WAR.AI estudia miles de horas de combate para comprender los estilos individuales de cada luchador, desde golpes y agarres hasta patrones de movimiento y tendencias estratégicas.</p>
+                </div>
+            </div>
+            <!-- Block 2: Neural network models -->
+            <div class="warai-block alternate">
+                <img src="images/war2.png" alt="Modelos neuronales avanzados">
+                <div class="text">
+                    <h3>Modelos neuronales avanzados</h3>
+                    <p>Nuestras redes neuronales de última generación integran estadísticas ocultas, historiales de enfrentamientos y variables contextuales para simular miles de escenarios posibles por combate.</p>
+                </div>
+            </div>
+            <!-- Block 3: High accuracy predictions -->
+            <div class="warai-block">
+                <img src="images/war3.png" alt="Predicciones precisas de WAR.AI">
+                <div class="text">
+                    <h3>Predicciones con precisión</h3>
+                    <p>El motor WAR.AI genera probabilidades de éxito con una fiabilidad demostrada, ofreciendo selecciones con la mayor tasa de aciertos del mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Statistics Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat">
+                <div class="number">+81.7%</div>
+                <div class="label">aciertos en los últimos 50 eventos</div>
+            </div>
+            <div class="stat">
+                <div class="number">+30.240€</div>
+                <div class="label">generados por usuarios en 2025</div>
+            </div>
+            <div class="stat">
+                <div class="number">+2.100</div>
+                <div class="label">combinadas ganadas gracias a WAR.AI</div>
             </div>
         </div>
     </section>
