@@ -379,13 +379,30 @@ footer p {
     flex: 1 1 45%;
     border-radius: 8px;
     height: auto;
+    /* Ensure images scale nicely and do not overflow their container */
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    /* Limit the height of WAR.AI images so that they don't dominate the page on desktop
+       screens. A lower max-height keeps the text alongside the image visible.
+       If needed, adjust this value to fine‑tune the aspect ratio. */
+    max-height: 450px;
 }
 .warai-block .text {
     flex: 1 1 50%;
+    /* Allow long words to wrap instead of overflowing off the page */
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
     /* Center the text vertically within each WAR.AI block on larger screens */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 100%;
+
+    /* Add padding to give the text breathing room and prevent it from
+       touching the edge of the image or container. This also helps
+       improve readability on large screens. */
+    padding: 0 10px;
 }
 .warai-block .text h3 {
     font-size: 1.6rem;
@@ -546,16 +563,19 @@ footer p {
 @media (min-width: 992px) {
     /* On larger screens, keep the WAR.AI blocks side‑by‑side and
        allocate more space to the text column so headings don't wrap
-       unnecessarily. Giving the image 40% ofrow and the text 60%55%
+       unnecessarily. Giving the image 45% of the row and the text 55%
        helps long headings fit comfortably. */
     .warai-block {
         flex-wrap: nowrap;
-    
-    .warai-block img {
-        flex0 : 0 0 40%;;
     }
-   .warai-block .text {
-            flex: 0 0 60%;
+    .warai-block img {
+        /* Reduce the width of the image on large screens to give more room for text */
+        flex: 0 0 40%;
+    }
+    .warai-block .text {
+        /* Increase the width of the text column on large screens */
+        flex: 0 0 60%;
+    }
 }
 
 /* Responsive design */
